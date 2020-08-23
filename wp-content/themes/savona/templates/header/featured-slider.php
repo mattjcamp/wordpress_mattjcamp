@@ -79,7 +79,7 @@ $slider_data .= '}';
 	<div class="slider-item">
 
 		<?php if ( $slider_columns === '1' ) : ?>
-			<div class="slider-item-bg" style="background-image:url(<?php echo esc_url(the_post_thumbnail_url()); ?>);"></div>
+			<div class="slider-item-bg" style="background-image:url(<?php the_post_thumbnail_url(); ?>);"></div>
 		<?php else : ?>
 			<img src="<?php the_post_thumbnail_url('savona-slider-grid-thumbnail'); ?>" alt="">
 		<?php endif; ?>

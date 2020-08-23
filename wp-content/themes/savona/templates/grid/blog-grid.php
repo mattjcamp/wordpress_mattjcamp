@@ -67,7 +67,7 @@
 
 				<?php if ( savona_options( 'blog_page_show_more' ) === true ) : ?>
 				<div class="read-more">
-					<a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( savona_options( 'blog_page_more_text' ) ); ?></a>
+					<a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html__( 'Read More', 'savona' ); ?></a>
 				</div>
 				<?php endif; ?>
 				

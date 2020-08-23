@@ -9,6 +9,7 @@ use Automattic\Jetpack\Constants;
 use Automattic\Jetpack\Sync\Modules;
 use Automattic\Jetpack\Sync\Functions;
 use Automattic\Jetpack\Sync\Sender;
+use Automattic\Jetpack\Redirect;
 
 /**
  * Class Jetpack_Debug_Data
@@ -94,6 +95,10 @@ class Jetpack_Debug_Data {
 	 * @return array $args Debug information in the same format as the initial argument.
 	 */
 	public static function core_debug_data( $debug ) {
+		$support_url = Jetpack::is_development_version()
+			? Redirect::get_url( 'jetpack-contact-support-beta-group' )
+			: Redirect::get_url( 'jetpack-contact-support' );
+
 		$jetpack = array(
 			'jetpack' => array(
 				'label'       => __( 'Jetpack', 'jetpack' ),
@@ -103,7 +108,7 @@ class Jetpack_Debug_Data {
 						'Diagnostic information helpful to <a href="%1$s" target="_blank" rel="noopener noreferrer">your Jetpack Happiness team<span class="screen-reader-text">%2$s</span></a>',
 						'jetpack'
 					),
-					esc_html( 'https://jetpack.com/contact-support/' ),
+					esc_url( $support_url ),
 					__( '(opens in a new tab)', 'jetpack' )
 				),
 				'fields'      => self::debug_data(),
@@ -278,7 +283,7 @@ class Jetpack_Debug_Data {
 			foreach ( $sync_statuses as $sync_status => $sync_status_value ) {
 				$human_readable_sync_status[ $sync_status ] =
 					in_array( $sync_status, array( 'started', 'queue_finished', 'send_started', 'finished' ), true )
-						? date( 'r', $sync_status_value ) : $sync_status_value;
+						? gmdate( 'r', $sync_status_value ) : $sync_status_value;
 			}
 			$debug_info['full_sync'] = array(
 				'label'   => 'Full Sync Status',

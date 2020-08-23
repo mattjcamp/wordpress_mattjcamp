@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GA Google Analytics\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 00:51+0000\n"
+"POT-Creation-Date: 2020-08-15 23:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -88,43 +88,53 @@ msgstr ""
 msgid "Cheatin&rsquo; huh?"
 msgstr ""
 
-#: ga-google-analytics.php:366
+#: ga-google-analytics.php:327
+msgid "Error: your tracking code begins with"
+msgstr ""
+
+#: ga-google-analytics.php:328
+msgid ""
+"(for Google Tag Manager), which is not supported. Please try again with a "
+"supported tracking code."
+msgstr ""
+
+#: ga-google-analytics.php:377
 msgid "Include tracking code in page head (via"
 msgstr ""
 
-#: ga-google-analytics.php:366 ga-google-analytics.php:370
+#: ga-google-analytics.php:377 ga-google-analytics.php:381
 msgid ")"
 msgstr ""
 
-#: ga-google-analytics.php:370
+#: ga-google-analytics.php:381
 msgid "Include tracking code in page footer (via"
 msgstr ""
 
-#: ga-google-analytics.php:382 inc/settings-display.php:75
+#: ga-google-analytics.php:393 inc/settings-display.php:75
 msgid "Universal Analytics"
 msgstr ""
 
-#: ga-google-analytics.php:383 inc/settings-display.php:76
+#: ga-google-analytics.php:394 inc/settings-display.php:76
 msgid "Global Site Tag"
 msgstr ""
 
-#: ga-google-analytics.php:384
+#: ga-google-analytics.php:395
 msgid "Legacy"
 msgstr ""
 
-#: ga-google-analytics.php:390
+#: ga-google-analytics.php:401
 msgid "(default)"
 msgstr ""
 
-#: ga-google-analytics.php:394
+#: ga-google-analytics.php:405
 msgid "(new method)"
 msgstr ""
 
-#: ga-google-analytics.php:398
+#: ga-google-analytics.php:409
 msgid "(deprecated)"
 msgstr ""
 
-#: ga-google-analytics.php:461
+#: ga-google-analytics.php:472
 msgid "Restore default plugin options"
 msgstr ""
 
@@ -190,7 +200,7 @@ msgstr ""
 msgid "Choose either"
 msgstr ""
 
-#: inc/settings-display.php:76 inc/support-panel.php:62
+#: inc/settings-display.php:76 inc/support-panel.php:65
 msgid "or"
 msgstr ""
 
@@ -352,7 +362,7 @@ msgid "before"
 msgstr ""
 
 #: inc/settings-display.php:209
-msgid "the GA tracking code. Leave unchecked to display"
+msgid "the GA tracking code (leave unchecked to display"
 msgstr ""
 
 #: inc/settings-display.php:209
@@ -360,7 +370,7 @@ msgid "after"
 msgstr ""
 
 #: inc/settings-display.php:209
-msgid "the tracking code."
+msgid "the tracking code)"
 msgstr ""
 
 #: inc/settings-display.php:213
@@ -368,7 +378,9 @@ msgid "Admin Area"
 msgstr ""
 
 #: inc/settings-display.php:216
-msgid "Enable GA in the WordPress Admin Area"
+msgid ""
+"Enable tracking in WP Admin Area (adds tracking code only; to view stats log "
+"into your Google account)"
 msgstr ""
 
 #: inc/settings-display.php:220
@@ -419,51 +431,51 @@ msgstr ""
 msgid "Obsessive Web Development"
 msgstr ""
 
-#: inc/support-panel.php:52
+#: inc/support-panel.php:55
 msgid "Perishable Press Books"
 msgstr ""
 
-#: inc/support-panel.php:53
+#: inc/support-panel.php:56
 msgid "Plugin Planet"
 msgstr ""
 
-#: inc/support-panel.php:54
+#: inc/support-panel.php:57
 msgid "Donate via PayPal"
 msgstr ""
 
-#: inc/support-panel.php:56
+#: inc/support-panel.php:59
 msgid "books"
 msgstr ""
 
-#: inc/support-panel.php:57
+#: inc/support-panel.php:60
 msgid "plugins"
 msgstr ""
 
-#: inc/support-panel.php:58
+#: inc/support-panel.php:61
 msgid "donation"
 msgstr ""
 
-#: inc/support-panel.php:60
+#: inc/support-panel.php:63
 msgid "Thank you for using"
 msgstr ""
 
-#: inc/support-panel.php:61
+#: inc/support-panel.php:64
 msgid "Please show support by purchasing one of my"
 msgstr ""
 
-#: inc/support-panel.php:62
+#: inc/support-panel.php:65
 msgid "or by making a"
 msgstr ""
 
-#: inc/support-panel.php:63
+#: inc/support-panel.php:66
 msgid "Your generous support helps to ensure future development of"
 msgstr ""
 
-#: inc/support-panel.php:64
+#: inc/support-panel.php:67
 msgid "and is greatly appreciated."
 msgstr ""
 
-#: inc/support-panel.php:66
+#: inc/support-panel.php:69
 msgid ""
 "Any size donation helps me to continue developing this free plugin and other "
 "awesome WordPress resources."

@@ -1,10 +1,10 @@
 === Jetpack by WordPress.com ===
-Contributors: automattic, adamkheckler, aduth, akirk, allendav, alternatekev, andy, annezazu, apeatling, azaozz, batmoo, barry, beaulebens, blobaugh, cainm, cena, cfinke, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, davoraltman, daniloercoli, designsimply, dllh, drawmyface, dsmart, dzver, ebinnion, eliorivero, enej, eoigal, erania-pinnera, ethitter, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, jblz, jasmussen, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, keoshi, koke, kraftbj, lancewillett, lschuyler, macmanx, martinremy, matt, matveb, mattwiebe, maverick3x6, mcsf, mdawaffe, MichaelArestad, migueluy, mikeyarce, mkaz, nancythanki, nickmomrik, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, ryancowles, richardmuscat, richardmtl, roccotripaldi, samhotchkiss, scarstocea, sdquirk, stephdau, tmoorewp, tyxla, Viper007Bond, westi, yoavf, zinigor
+Contributors: automattic, adamkheckler, aduth, akirk, allendav, alternatekev, andy, annezazu, apeatling, azaozz, batmoo, barry, beaulebens, blobaugh, brbrr, cainm, cena, cfinke, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, davoraltman, daniloercoli, delawski, designsimply, dllh, drawmyface, dsmart, dzver, ebinnion, egregor, eliorivero, enej, eoigal, erania-pinnera, ethitter, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, jblz, jasmussen, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, kbrownkd, keoshi, koke, kraftbj, lancewillett, lschuyler, macmanx, martinremy, matt, matveb, mattwiebe, maverick3x6, mcsf, mdawaffe, MichaelArestad, migueluy, mikeyarce, mkaz, nancythanki, nickmomrik, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, ryancowles, richardmuscat, richardmtl, roccotripaldi, samhotchkiss, scarstocea, scottsweb, sdquirk, simison, stephdau, tmoorewp, tyxla, Viper007Bond, westi, yoavf, zinigor
 Tags: Jetpack, WordPress.com, backup, security, related posts, CDN, speed, anti-spam, social sharing, SEO, video, stats
-Stable tag: 7.5.3
-Requires at least: 5.1
+Stable tag: 8.8.2
+Requires at least: 5.4
 Requires PHP: 5.6
-Tested up to: 5.2
+Tested up to: 5.5
 
 The ideal plugin for stats, related posts, search engine optimization, social sharing, protection, backups, security, and more.
 
@@ -27,7 +27,7 @@ Activate site accelerator tools and watch your page load times decrease -- we'll
 
 * Images and static files, like CSS and JavaScript, served from our servers, not yours.
 * Elasticsearch-powered related content and site search, for relevant results with no drain on your servers.
-* Lazy image loading for a faster mobile experience.
+* Lazy load images for a faster mobile experience.
 * Unlimited and high-speed video via our content delivery network.
 
 = Effortless Site Management =
@@ -96,67 +96,83 @@ There are opportunities for developers at all levels to contribute. [Learn more 
 
 == Changelog ==
 
-= 7.5.3 =
+= 8.8.2 =
 
-* Release date: July 17, 2019
-* Release post: https://wp.me/p1moTy-k9A
-
-**Bug fixes**
-
-* General: Fixes plugin activation/deactivation hooks that were accidentally disabled.
-* General: Fixes fatal errors that were possible when using pre-7.5 Jetpack internal API.
-
-= 7.5.2 =
-
-* Release date: July 4, 2019
-* Release post: https://wp.me/p1moTy-k9A
+* Release date: August 17, 2020
 
 **Bug fixes**
 
-* General: Fixes an error when a site's connection to WordPress.com is set to "Safe Mode".
+* Infinite Scroll: avoid loading issues with some themes using Infinite Scroll.
 
-= 7.5.1 =
+= 8.8.1 =
 
-* Release date: July 2, 2019
-* Release post: https://wp.me/p1moTy-k9A
-
-**Bug fixes**
-
-* General: Fixes an error when trying to delete the Jetpack plugin.
-* General: Fixes supported PHP version declaration.
-
-= 7.5 =
-
-* Release date: July 2, 2019
-* Release post: https://wp.me/p1moTy-k9A
-
-**Enhancements**
-
-* Admin Page: add an option to send a magic link that will help you log in to the mobile apps in one click.
-* Admin Page: improve style and wording of many different sections of the dashboard to clarify the role of each feature.
-* Admin Page: remove feature that would offer you to activate a list of recommended features upon connecting your site to WordPress.com.
-* Backups: include updates to term relationships when backing up Post object changes.
-* Backups: synchronize ABSPATH value to help setting up SSH credentials when using Jetpack Backups.
-* Faceboook Embeds: support new video URL format.
-* Lazy Load: allow adding event handlers to images.
-* Recurring Payments Block: improve the display of the block in the editor.
-* WordAds: update link to daily earnings stats on WordPress.com.
-* WordAds: provide additional details for custom ads.txt entries in the Jetpack dashboard.
-* WordPress.com Toolbar: add colors to Recovery Mode button.
+* Release date: August 10, 2020
 
 **Improved compatibility**
 
-* Admin Page: improve display of the Jetpack Dashboard in IE11.
-* Sharing: avoid displaying extra list items below the sharing buttons when using the AMP plugin.
-* Staging enviroments: add staging enviroment detection for DreamPress sites.
+* WordPress 5.5: ensure that Jetpack's Autoupdate feature is fully compatible with the autoupdate feature introduced in the new version of WordPress.
 
 **Bug fixes**
 
-* Admin Page: fix display of backup details in the Jetpack dashboard.
-* Admin Page: do not disable Widget Visibility and Widgets toggles in Development mode.
-* Sitemaps: ensure links to sitemaps appear in robots.txt
-* Slideshow Block: fix CSS class name.
-* Videos: ensure that Video Poster images are always displayed properly.
+* Admin Page: avoid blank dashboard when some specific notices (such as Offline mode) are displayed.
+* Synchronization with WordPress.com: resolve errors triggered from not properly sanitizing/verifying inputs.
+
+= 8.8 =
+
+* Release date: August 4, 2020
+* Release post: https://wp.me/p1moTy-rs2
+
+**Enhancements**
+
+* Blocks: update categories to improve discoverability.
+* Connection Flow: improve experience of any additional users of your site that may want to link their WordPress.com account.
+* Dashboard: add Jetpack Anti-spam to the product list in the dashboard.
+* External Media: add ability to show google photos for a specific month or year.
+* Infinite Scroll: improve accessibility of the "Load More" behavior.
+* Instant Search: add support for excluding certain post types from search results.
+* Mailchimp Block: show error message on email validation error.
+* Markdown block: improve handling of long links with custom characters, as well as em- and en- dashes.
+* Payments block: add extra customization options to the Submit button.
+* Performance: use WordPress-provided wp_resource_hints for DNS prefetching.
+* Podcast Player block: start saving content in post content for better compatibility with non-WordPress tools.
+* Sharing: add direct link to share button customization for logged-in admins.
+* Widgets: introduce new Instagram Widget.
+* Widgets: add additional options to the Twitter Timeline widget.
+* Widgets: add the rel attribute to links with target=”_blank” in the Social Icons widget.
+* WordAds: update ad units to be more flexible and dynamic.
+
+**Improved compatibility**
+
+* Blocks: add default text color to all buttons in AMP mode.
+* Connection Flow: improve the display of any connection errors, and provide more tools to help fix those connection errors.
+* Contact Form: updates based on language improvements in WordPress 5.5.
+* Deprecated hooks: Use native WordPress functionality for deprecated hooks.
+* Deprecation Notices: provide more information about deprecated files and functions.
+* General: ensure Jetpack's full compatibility with the upcoming WordPress 5.5 release.
+* General: update Jetpack's minimum required WordPress version to 5.4, in anticipation of the upcoming WordPress 5.5 release.
+* General: update Jetpack to support new environment type features introduced in WordPress 5.5.
+* Infinite Scroll: fix layout issue when used with the P2 theme.
+* Latest Instagram Posts block: fix layout when used with the AMP plugin.
+* Synchronization: improve stability of the connection between your site and WordPress.com.
+* WordPress.com REST API: adjust API response based on language improvements in WordPress 5.5.
+
+**Bug fixes**
+
+* Asset CDN: avoid returning a directory when setting the local path for translation files.
+* Carousel: ensure jQuery is loaded when using the Carousel feature.
+* Contact Form: fix alignment of radio and checkbox items.
+* Connection: ensure the connection flow can be completed when third-party cookies are disabled.
+* External Media: ensure that images inserted from Pexels or Google Photos are attached to the post you're composing.
+* General: avoid issues on sites hosted on a Windows server environment.
+* General: avoid PHP notices when managing your site via the WordPress Desktop app.
+* Gathering Tweetstorms: don't enable the Unroll button until after a Twitter URL has been entered and verified.
+* Latest Instagram Posts block: stop showing cached galleries after the Instagram connection has been deleted.
+* Likes: resolve a potential PHP notice.
+* Media Tools: resolve potential PHP notice.
+* OpenTable block: ensure additional CSS classes are populated correctly.
+* Subscriptions block: Stop saving localized attributes defaults in the block content.
+* Tiled Gallery block: do not load the block when your site is not connected to WordPress.com.
+* Twitter Cards: resolve potential PHP notice.
 
 --------
 

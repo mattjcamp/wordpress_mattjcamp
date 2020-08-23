@@ -12,7 +12,7 @@ function savona_about_page_output() {
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Welcome to Savona!', 'savona' ); ?></h1>
 		<p class="welcome-text">
-			<?php esc_html_e( 'Savona is a free multi-purpose Wordpress Blog theme. It\'s perfect for any kind of blog or website: personal, professional, tech, fashion, travel, health, lifestyle, food, blogging etc. Its fully Responsive and Retina Display ready, clean, modern and minimal design. Savona is WooCommerce compatible, SEO friendly and also has RTL support.', 'savona' ); ?>
+			<?php esc_html_e( 'Savona is a free multi-purpose WordPress Blog theme. It\'s perfect for any kind of blog or website: personal, professional, tech, fashion, travel, health, lifestyle, food, blogging etc. Its fully Responsive and Retina Display ready, clean, modern and minimal design. Savona is WooCommerce compatible, SEO friendly and also has RTL support.', 'savona' ); ?>
 		</p>
 
 		<!-- Tabs -->
@@ -84,7 +84,7 @@ function savona_about_page_output() {
 				savona_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget', esc_html__( 'WP Instagram Widget', 'savona' ), esc_html__( 'A WordPress widget for showing your latest Instagram photos.', 'savona' ) );
 
 				// Facebook Widget
-				savona_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'savona' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.', 'savona' ) );
+				savona_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'savona' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your WordPress website sidebar within few minutes.', 'savona' ) );
 
 				?>
 
@@ -168,7 +168,7 @@ function savona_about_page_output() {
 						<td>
 							<h3><?php esc_html_e( 'WooCommerce Integration', 'savona' ); ?></h3>
 							<p>
-								<?php esc_html_e( 'The best eCommerce solution for Wordpress websites. Add your own Shop and sell anything from digital Goods to Coconuts.', 'savona' ); ?>
+								<?php esc_html_e( 'The best eCommerce solution for WordPress websites. Add your own Shop and sell anything from digital Goods to Coconuts.', 'savona' ); ?>
 								
 							</p>
 						</td>

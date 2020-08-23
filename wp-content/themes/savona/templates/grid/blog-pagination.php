@@ -1,21 +1,20 @@
 <?php 
 
-// global $paged;
-// global $wp_query;
-$pages = $wp_query->max_num_pages;
+$blogpages = $wp_query->max_num_pages;
+$blogpaged = get_query_var('paged');
 $range = 2;
 $showitems = ( $range * 2 ) + 1;
 $post_pagination = savona_options( 'blog_page_post_pagination' );
 
-if ( empty( $paged ) ) {
-	$paged = 1;
+if ( empty( $blogpaged ) ) {
+	$blogpaged = 1;
 }
 
-if ( ! $pages ) {
-	$pages = 1;
+if ( ! $blogpages ) {
+	$blogpages = 1;
 }
 
-if ( $pages == 1 ) {
+if ( $blogpages == 1 ) {
 	return;
 }
 
@@ -36,14 +35,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( $post_pagination === 'numeric' ) {
 
 	//  Previous Page
-	if ( $paged > 1 ) {
-		echo '<a href="'. esc_url( get_pagenum_link( $paged - 1 ) ) .'" class="numeric-prev-page" ><i class="fa fa-long-arrow-left"></i></a>';
+	if ( $blogpaged > 1 ) {
+		echo '<a href="'. esc_url( get_pagenum_link( $blogpaged - 1 ) ) .'" class="numeric-prev-page" ><i class="fa fa-long-arrow-left"></i></a>';
 	}
 	
 	// Pagination
-	for ( $i = 1; $i <= $pages; $i++ ) {
-		if ( 1 != $pages &&( !( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
-			if ( $paged == $i ) {
+	for ( $i = 1; $i <= $blogpages; $i++ ) {
+		if ( 1 != $blogpages &&( !( $i >= $blogpaged + $range + 1 || $i <= $blogpaged - $range - 1 ) || $blogpages <= $showitems ) ) {
+			if ( $blogpaged == $i ) {
 				echo '<span class="numeric-current-page">'. ent2ncr($i) .'</span>';
 			} else {
 				echo '<a href="'. esc_url( get_pagenum_link( ent2ncr($i) ) ). '">'. ent2ncr($i) .'</a>';
@@ -52,8 +51,8 @@ if ( $post_pagination === 'numeric' ) {
 	}
 
 	// Next Page
-	if ( $paged < $pages ) {
-		echo '<a href="'. esc_url( get_pagenum_link( $paged + 1 ) ).'" class="numeric-next-page" ><i class="fa fa-long-arrow-right"></i></a>';
+	if ( $blogpaged < $blogpages ) {
+		echo '<a href="'. esc_url( get_pagenum_link( $blogpaged + 1 ) ).'" class="numeric-next-page" ><i class="fa fa-long-arrow-right"></i></a>';
 	}
 
 // Default Pagination

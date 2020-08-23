@@ -1,9 +1,11 @@
 === Savona ===
-
+Contributors: aslamnaik
 Author: Aslam optimathemes.com
-Requires at least: WordPress 4.7+
-Tested up to: WordPress 4.7
-Version: 1.0.21
+Requires at least: WordPress 4.7
+Tested up to: WordPress 5.3
+Requires PHP: 5.6.0
+Stable tag: 1.0.22
+Version: 1.0.22
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-menu, custom-logo, featured-images, footer-widgets, theme-options
@@ -46,12 +48,18 @@ Sticky-kit, Leaf Corcoran 2015
 Licenses: WTFPL
 Source: http://leafo.net/sticky-kit/
 
-Screenshot image, Copyright theglassdesk
+Screenshot image, Copyright Pixabay
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/desktop-feminine-mockup-white-blog-2325627/
+Source: https://www.pexels.com/photo/computer-cup-desk-drink-434337/
 
 
 == Changelog ==
+
+= 1.0.22 =
+* Read more button fixed for language issue
+* Removed unnecessary escape function in featured slider
+* implemented wp_body_open()
+* updated image license source for screenshot image
 
 = 1.0.21 =
 * Screenshot Updated

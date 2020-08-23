@@ -667,3 +667,12 @@ function savona_recent_widget_registration() {
   register_widget('Savona_Recent_Posts_Widget');
 }
 add_action('widgets_init', 'savona_recent_widget_registration');
+
+/**
+ * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
