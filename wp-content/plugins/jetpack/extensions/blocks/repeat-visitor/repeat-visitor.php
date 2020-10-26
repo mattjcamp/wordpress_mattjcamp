@@ -9,7 +9,6 @@
 
 namespace Automattic\Jetpack\Extensions\Repeat_Visitor;
 
-use Automattic\Jetpack\Blocks;
 use Jetpack_Gutenberg;
 
 const FEATURE_NAME = 'repeat-visitor';
@@ -39,7 +38,7 @@ add_action( 'init', __NAMESPACE__ . '\register_block' );
 function render_block( $attributes, $content ) {
 	Jetpack_Gutenberg::load_assets_as_required( FEATURE_NAME );
 
-	$classes = Blocks::classes( FEATURE_NAME, $attributes );
+	$classes = Jetpack_Gutenberg::block_classes( FEATURE_NAME, $attributes );
 
 	$count     = isset( $_COOKIE['jp-visit-counter'] ) ? intval( $_COOKIE['jp-visit-counter'] ) : 0;
 	$criteria  = isset( $attributes['criteria'] ) ? $attributes['criteria'] : 'after-visits';

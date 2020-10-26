@@ -190,7 +190,7 @@ class Comments extends Module {
 		 */
 		return apply_filters(
 			'jetpack_sync_whitelisted_comment_types',
-			array( '', 'comment', 'trackback', 'pingback', 'review' )
+			array( '', 'comment', 'trackback', 'pingback' )
 		);
 	}
 

@@ -99,6 +99,12 @@ class REST_Connector {
 			array(
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => array( $this, 'connection_reconnect' ),
+				'args'                => array(
+					'action' => array(
+						'type'     => 'string',
+						'required' => true,
+					),
+				),
 				'permission_callback' => __CLASS__ . '::jetpack_reconnect_permission_check',
 			)
 		);
@@ -245,21 +251,42 @@ class REST_Connector {
 	 *
 	 * @since 8.8.0
 	 *
+	 * @param WP_REST_Request $request The request sent to the WP REST API.
+	 *
 	 * @return \WP_REST_Response|WP_Error
 	 */
-	public function connection_reconnect() {
+	public function connection_reconnect( WP_REST_Request $request ) {
+		$params = $request->get_json_params();
+
 		$response = array();
 
 		$next = null;
 
-		$result = $this->connection->restore();
+		switch ( $params['action'] ) {
+			case 'reconnect':
+				$result = $this->connection->restore();
 
-		if ( is_wp_error( $result ) ) {
-			$response = $result;
-		} elseif ( is_string( $result ) ) {
-			$next = $result;
-		} else {
-			$next = true === $result ? 'completed' : 'failed';
+				if ( is_wp_error( $result ) ) {
+					$response = $result;
+				} elseif ( is_string( $result ) ) {
+					$next = $result;
+				} else {
+					$next = true === $result ? 'completed' : 'failed';
+				}
+
+				break;
+			case 'reconnect_force':
+				$result = $this->connection->reconnect();
+
+				if ( true === $result ) {
+					$next = 'authorize';
+				} elseif ( is_wp_error( $result ) ) {
+					$response = $result;
+				}
+				break;
+			default:
+				$response = new WP_Error( 'Unknown action' );
+				break;
 		}
 
 		switch ( $next ) {
@@ -269,12 +296,6 @@ class REST_Connector {
 				break;
 			case 'completed':
 				$response['status'] = 'completed';
-				/**
-				 * Action fired when reconnection has completed successfully.
-				 *
-				 * @since 9.0.0
-				 */
-				do_action( 'jetpack_reconnection_completed' );
 				break;
 			case 'failed':
 				$response = new WP_Error( 'Reconnect failed' );

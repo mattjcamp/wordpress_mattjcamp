@@ -1,6 +1,6 @@
 <?php
 /**
- * Jetpack Debug Data for the Site Health sections.
+ * Jetpack Debug Data for the legacy Jetpack debugger page and the WP 5.2-era Site Health sections.
  *
  * @package jetpack
  */
@@ -10,7 +10,6 @@ use Automattic\Jetpack\Sync\Modules;
 use Automattic\Jetpack\Sync\Functions;
 use Automattic\Jetpack\Sync\Sender;
 use Automattic\Jetpack\Redirect;
-use Automattic\Jetpack\Connection\Manager as Connection_Manager;
 
 /**
  * Class Jetpack_Debug_Data
@@ -167,7 +166,7 @@ class Jetpack_Debug_Data {
 		);
 		$debug_info['master_user']    = array(
 			'label'   => 'Jetpack Master User',
-			'value'   => self::human_readable_master_user(), // Only ID number and user name.
+			'value'   => self::human_readable_master_user(),
 			'private' => false,
 		);
 
@@ -181,9 +180,8 @@ class Jetpack_Debug_Data {
 		 * If a token does not contain a period, then it is malformed and we report it as such.
 		 */
 		$user_id    = get_current_user_id();
-		$cxn_mgr    = new Connection_Manager();
-		$blog_token = $cxn_mgr->get_access_token();
-		$user_token = $cxn_mgr->get_access_token( $user_id );
+		$blog_token = Jetpack_Data::get_access_token();
+		$user_token = Jetpack_Data::get_access_token( $user_id );
 
 		$tokenset = '';
 		if ( $blog_token ) {
@@ -266,7 +264,7 @@ class Jetpack_Debug_Data {
 				$debug_info[ $header ] = array(
 					'label'   => 'Server Variable ' . $header,
 					'value'   => ( $_SERVER[ $header ] ) ? $_SERVER[ $header ] : 'false',
-					'private' => true, // This isn't really 'private' information, but we don't want folks to easily paste these into public forums.
+					'private' => false,
 				);
 			}
 		}
@@ -395,6 +393,6 @@ class Jetpack_Debug_Data {
 	private static function human_readable_user( $user ) {
 		$user = new WP_User( $user );
 
-		return sprintf( '#%1$d %2$s', $user->ID, $user->user_login ); // Format: "#1 username".
+		return sprintf( '#%1$d %2$s (%3$s)', $user->ID, $user->user_login, $user->user_email ); // Format: "#1 username (user@example.com)".
 	}
 }
